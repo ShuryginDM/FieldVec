@@ -29,45 +29,39 @@ class DivisionOnZero{};
 class FieldVec{
 
 public:
+
     /**
-    * \param[in] p - количество элементов поля. По умолчанию p == 2.
-    * Если уже была создана переменная класса FieldVec, то все последующие переменные этого класса будут иметь то же
-    * значение q.
+    * q - статическая переменная. Возможна работа только с кольцом полиномов только над кольцом вычетов по одному модулю.
+    */
+    static unsigned int q;
+    
+    /***
     * \throw NullField если при инициализации первой переменной класса FieldVec было подано значение p == 0
     * \throw OneField если при инициализации первой переменной класса FieldVec было подано значение p == 1
     * Полином представляется в виде 0 * x ^ 0
     */
-    FieldVec(const unsigned int p = 2){
-        if(!q){
-            if(p == 0){
-                throw NullField{};
-            }
-            if(p == 1){
-                throw OneField{};
-            }
-            q = p;
-            var.push_back(0);
+    FieldVec(){
+        if(q == 0){
+            throw NullField{};
         }
+        if(q == 1){
+            throw OneField{};
+        }
+        var.push_back(0);
     }
 
     /**
-    * \param[in] p - количество элементов поля. По умолчанию p == 2.
     * \param[in] v - вектор коэффициентов. В v[i] коэффициент при x^i. 
     * Если в векторе v нет элементов, то полином представляется в виде 0 * x ^ 0
-    * Если уже была создана переменная класса FieldVec, то все последующие переменные этого класса будут иметь то же
-    * значение q.
     * \throw NullField если при инициализации первой переменной класса FieldVec было подано значение p == 0
     * \throw OneField если при инициализации первой переменной класса FieldVec было подано значение p == 1
     */
-    FieldVec(const std::vector<unsigned int> &v, const unsigned int p = 2){
-        if(!q){
-            if(p == 0){
-                throw NullField{};
-            }
-            if(p == 1){
-                throw OneField{};
-            }
-            q = p;
+    FieldVec(std::vector<unsigned int> &v){
+        if(q == 0){
+            throw NullField{};
+        }
+        if(q == 1){
+            throw OneField{};
         }
         for(auto i = v.begin(); i < v.end(); i++){
             var.push_back(*i % q);
@@ -77,7 +71,8 @@ public:
         }
     }
 
-    FieldVec(FieldVec &v){
+
+    FieldVec(FieldVec const &v){
         var = v.var;
     }
 
@@ -92,7 +87,7 @@ public:
     /**
     * \return максимальная степень x в этом многочлене (перед которой коэффициент, возможно, равен 0)
     */
-    unsigned int size(){
+    int size() const{
         return var.size();
     }
 
@@ -114,9 +109,9 @@ public:
     * Оператор сложения полиномов в кольце полиномов над кольцом вычетов по модулю q
     */
     FieldVec operator+(const FieldVec &v){
-	    FieldVec sum_ = v;        
-	    mn = sum_.size() < var.size() ? sum_.size() : var.size();
-        for(unsigned int i = 0; i < mn; i--){
+	    FieldVec sum_ = v;      
+	    unsigned int mn = sum_.size() < var.size() ? sum_.size() : var.size();
+        for(unsigned int i = 0; i < mn; i++){
             sum_[i] = (sum_[i] + var[i]) % q;
         }
 	    for(unsigned int i = mn; i < var.size(); i++){
@@ -129,12 +124,12 @@ public:
     * Оператор сложения полиномов в кольце полиномов над кольцом вычетов по модулю q
     */
     FieldVec &operator+=(const FieldVec &v){
-        mn = v.size() < var.size() ? v.size() : var.size();
+        unsigned int mn = v.size() < var.size() ? v.size() : var.size();
         for(unsigned int i = 0; i < mn; i++){
-            var[i] = (var[i] + v[i]) % q;
+            var[i] = (var[i] + v.var[i]) % q;
         }
         for(unsigned int i = mn; i < v.var.size(); i++){
-            var.push_back(v[i]);
+            var.push_back(v.var[i]);
         }
         return *this;
     }
@@ -143,10 +138,11 @@ public:
     * Оператор умножения полиномов в кольце полиномов над кольцом вычетов по модулю q
     */
     FieldVec operator*(const FieldVec &v){
-        FieldVec mul_(v.size() + var.size() - 1, 0);
+        std::vector<unsigned int> z(v.size() + var.size() - 1, 0);
+        FieldVec mul_(z);
         for(unsigned int i = 0; i < var.size(); i++){
             for(unsigned int j = 0; j < v.size(); j++){
-                mul_.var[i + j] = (mul_.var[i + j] + var[i] * v[j]) % q;
+                mul_.var[i + j] = (mul_[i + j] + var[i] * v.var[j]) % q;
             }
         }
         return mul_;
@@ -156,10 +152,11 @@ public:
     * Оператор умножения полиномов в кольце полиномов над кольцом вычетов по модулю q
     */
     FieldVec &operator*=(const FieldVec &v){
-        FieldVec mul_(v.size() + var.size() - 1, 0);
+        std::vector<unsigned int> z(v.size() + var.size() - 1, 0);
+        FieldVec mul_(z);
         for(unsigned int i = 0; i < var.size(); i++){
             for(unsigned int j = 0; j < v.size(); j++){
-                mul_.var[i + j] = (mul_.var[i + j] + var[i] * v[j]) % q;
+                mul_.var[i + j] = (mul_.var[i + j] + var[i] * v.var[j]) % q;
             }
         }
         var = mul_.var;
@@ -170,20 +167,22 @@ public:
     * Оператор сравнение полиномов на равенство в кольце полиномов над кольцом вычетов по модулю q
     */
     bool operator==(const FieldVec &v){
+        const FieldVec *mn_i, *mx_i;
         if(v.size() > var.size()){
-            FieldVec &mn = *this;
-            FieldVec &mx = v;    
+            mn_i = this;
+            mx_i = &v;    
         }else{
-            FieldVec &mn = v;
-            FieldVec &mx = *this;
+            mn_i = &v;
+            mx_i = this;
         }
-        for(unsigned int i = mx.size() - 1; i >= mn.size; i--){
-            if(mx[i]){
+        const FieldVec &mn = *mn_i, &mx = *mx_i;
+        for(unsigned int i = mx.var.size() - 1; i >= mn.var.size(); i--){
+            if(mx.var[i]){
                 return false;
             }
         }
-        for(unsigned int i = 0; i < mn.size(); i++){
-            if(mx[i] != mn[i]){
+        for(unsigned int i = 0; i < mn.var.size(); i++){
+            if(mx.var[i] != mn.var[i]){
                 return false;
             }
         }
@@ -203,19 +202,19 @@ public:
         for(unsigned int i = sub_.size(); i < v.size(); i++){
             sub_.push_back(0);
         }
-        for(unsigned int i = 0; i < neg_.size(); i++){
-            sub_[i] = (q + sub_[i] - v[i]) % q;
+        for(unsigned int i = 0; i < sub_.size(); i++){
+            sub_[i] = (q + sub_[i] - v.var[i]) % q;
         }
         return sub_;
     }
 
     FieldVec &operator-=(const FieldVec &v){
         FieldVec sub_ = *this;
-        for(unsigned int i = sub_.size(); i < val.size(); i++){
-            val.push_back(0);
+        for(unsigned int i = sub_.size(); i < var.size(); i++){
+            var.push_back(0);
         }
-        for(unsigned int i = 0; i < neg_.size(); i++){
-            val[i] = (q + val[i] - v[i]) % q;
+        for(unsigned int i = 0; i < var.size(); i++){
+            var[i] = (q + var[i] - v.var[i]) % q;
         }
         return *this;
     }
@@ -228,33 +227,35 @@ public:
     * \return остаток от деления на полином v
     */
     FieldVec operator%(const FieldVec &v){
-        unsigned int max_coef = v[0];
+        unsigned int max_coef = v.var[0];
         unsigned int max_coef_i = 0;
         for(unsigned int i = v.size() - 1; i > 0; i--){
-            if(v[i]){
-                max_coef = v[i];
-                max_coef_i = i;   
+            if(v.var[i]){
+                max_coef = v.var[i];
+                max_coef_i = i; 
+                break;  
             }
-            break;
         }
         std::vector<unsigned int> coefs(q, 0);
-        unsigned int t;
+        unsigned int t_prev = 0, t_next;
         for(unsigned int i = 1; i < q; i++){
-            t = (v[i - 1] + max_coef) % q
-            coefs[t] = i;
-            if(!t){
+            t_next = (t_prev + max_coef) % q;
+            coefs[t_next] = i;
+            t_prev = t_next;
+            if(!t_next){
                 throw NotPrimal{};
             }
         }
         FieldVec rem_ = *this;
+        unsigned int t;
         for(int i = rem_.size() - 1; i >= max_coef_i; i--){
             if(rem_[i]){
-                for(unsigned int j = 0; j < max_coef_i; j++){
-                    t = (coefs[rem_[i]] * v[j]) % q;
-                    if(rem_[j + i] > t){
-                        rem_[j + i] -= t;
+                for(unsigned int j = 0; j <= max_coef_i; j++){
+                    t = (coefs[rem_[i]] * v.var[j]) % q;
+                    if(rem_[i - max_coef_i + j] > t){
+                        rem_[i - max_coef_i + j] -= t;
                     }else{
-                        rem_[j + i] = t - rem_[j];
+                        rem_[i - max_coef_i + j] = (q + rem_[i - max_coef_i + j] - t) % q;
                     }
                 }
             }
@@ -268,53 +269,58 @@ public:
     * \throw DivisionOnZero если v - вектор, состоящий из 0
     * \return результат деления на полином v
     */
-    FieldVec operator/(const FieldVec &v){
-        unsigned int max_coef = v[0];
+    FieldVec operator/(FieldVec &v){
+        unsigned int max_coef = v.var[0];
         unsigned int max_coef_i = 0;
-        for(unsigned int i = v.size() - 1; i > 0; i--){
-            if(v[i]){
-                max_coef = v[i];
+        for(int i = v.size() - 1; i > 0; i--){
+            if(v.var[i]){
+                max_coef = v.var[i];
                 max_coef_i = i;   
+                break;
             }
-            break;
         }
-        unsigned int t;
+        std::vector<unsigned int> coefs(q, 0);
+        unsigned int t_prev = 0, t_next;
         for(unsigned int i = 1; i < q; i++){
-            t = (v[i - 1] + max_coef) % q
-            coefs[t] = i;
-            if(!t){
+            t_next = (t_prev + max_coef) % q;
+            coefs[t_next] = i;
+            t_prev = t_next;
+            if(!t_next){
                 throw NotPrimal{};
             }
         }
         if(max_coef_i > var.size()){
-            return 0;
+            FieldVec nl;
+            return nl;
         }
-        std::vector<unsigned int> z(var.size() - max_coef_i + 1, 0);
+        std::vector<unsigned int> z(var.size() - max_coef_i, 0);
         FieldVec div_(z);
         FieldVec rem_ = *this;
+        unsigned int t;
         for(int i = var.size() - 1; i >= max_coef_i; i--){
             if(rem_[i]){
-                for(unsigned int j = 0; j < max_coef_i; j++){
-                    t = (coefs[rem_[i + j]] * v[j]) % q;
-                    if(rem_[i + j] > t){
-                        rem_[i + j] -= t;
+                for(unsigned int j = 0; j <= max_coef_i; j++){
+                    t = (coefs[rem_[i]] * v.var[j]) % q;
+                    if(rem_[i - max_coef_i + j] > t){
+                        rem_[i - max_coef_i + j] -= t;
                     }else{
-                        rem_[i + j] = t - rem_[j];
+                        rem_[i - max_coef_i + j] = (q + rem_[i - max_coef_i + j] - t) % q;
                     }
                     div_[i - max_coef_i] = t;
 
                 }
             }
         }
-
+        return div_;
     }
 
     friend std::ostream& operator<<(std::ostream& os, const FieldVec &v){
-        os << "("
-        for(unsigned int i = 0; i < v.size(); i++){
-            os << v[i] << ";";
+        os << "(";
+        for(int i = 0; i < v.size() - 1; i++){
+            os << v.var[i] << ";";
         }
-        os << ")" << std::endl;
+        os << v.var[v.size() - 1];
+        os << ")";
         return os;
     }
 
@@ -325,9 +331,7 @@ private:
     * var[0] == 0
     */
     std::vector<unsigned int> var;
-    /**
-    * q - статическая переменная. Возможна работа только с кольцом полиномов только над кольцом вычетов по одному модулю.
-    */
-    static unsigned int q = 0;
+    
+};
 
-}
+unsigned int FieldVec::q = 0;
