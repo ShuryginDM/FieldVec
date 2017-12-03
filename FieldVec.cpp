@@ -273,10 +273,33 @@ void FieldVec::set(const unsigned int &z, const unsigned int &t){
     var[z] = t & q;
 }
 
+FieldVec &FieldVec::operator++(void){
+    for(auto i = var.begin(); i < var.end();i++){
+        *i = (*i + 1) % q;
+        if(*i){
+            return *this;
+        }
+    }
+    var.push_back(1);
+    return *this;
+}
+
+FieldVec &FieldVec::operator++(int l){
+    for(auto i = var.begin(); i < var.end();i++){
+        *i = (*i + 1) % q;
+        if(*i){
+            return *this;
+        }
+    }
+    var.push_back(1);
+    return *this;
+}
 
 
 
-BoolVec::BoolVec(void){
+
+
+BoolVec::BoolVec(){
     var.push_back(0);
 }
 
@@ -464,4 +487,26 @@ void BoolVec::tex_print(std::ostream &os, const char *name){
     if(!not_zero){
         os << "0";
     }
+}
+
+BoolVec &BoolVec::operator++(void){
+    for(auto i = var.begin(); i < var.end();i++){
+        *i = *i ^1;
+        if(*i){
+            return *this;
+        }
+    }
+    var.push_back(1);
+    return *this;
+}
+
+BoolVec &BoolVec::operator++(int l){
+    for(auto i = var.begin(); i < var.end(); i++){
+        *i = *i ^ 1;
+        if(*i){
+            return *this;
+        }
+    }
+    var.push_back(true);
+    return *this;
 }

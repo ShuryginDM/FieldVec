@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>My Project: Библиотека работы с кольцом полиномов над кольцом вычетов по модулю q</title>
+<title>My Project: example1.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,7 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
-      <li class="current"><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
       <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
       <li><a href="files.html"><span>Файлы</span></a></li>
       <li><a href="examples.html"><span>Примеры</span></a></li>
@@ -66,6 +66,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
       </li>
     </ul>
   </div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -80,30 +81,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">Библиотека работы с кольцом полиномов над кольцом вычетов по модулю q </div>  </div>
+<div class="title">example1.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><hr/>
-<h1>При q = 2 лучше использовать <a class="el" href="classBoolVec.html" title="Основной класс. ">BoolVec</a> (лучше оптимизировано). <a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec</a> работает с q &gt;= 2</h1>
-<hr/>
-<h1>Одновременно возможна работа <a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec</a> sтолько с поляризованными полиномами над кольцом вычетов только по одному модулю (переменная q - статическая переменная класса)!</h1>
-<h1>Перед первой инициализацией объекта класса <a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec</a> FieldVec::q должен быть явным образом проинициализирован:</h1>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;FieldVec::q = /*Количество элементов кольца вычетов*/;</div></div><!-- fragment --><p>В ином случае произойдет throw <a class="el" href="classNullField.html" title="Класс, используемый для того, чтобы показать тип исключения &quot;кольцо вычетов по модулю 0&quot;...">NullField</a>{}</p>
-<h1>Программа может некорректно обрабатывать старые векторы при изменении q в <a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec</a></h1>
-<h2>Реализованы некоторые базовые операции, такие как:</h2>
-<ul>
-<li>Сложение полиномов</li>
-<li>Умножение полиномов</li>
-<li>Сравнение полиномов на равенство</li>
-<li>Отыскание остатка при делении (должно работать достаточно медленно (если делимое и делитель имеют наибольшую степень s и t соответственно, то сложность алгоритма - O(max(s * t, q))))</li>
-<li>Деление многочлена на многочлен нацело (примечание то же, что и к предыдущему)</li>
-<li>Вывод полинома в виде вектора (a_0, a_1, ..., a_n), где a_i - коэффициент при x^i. Выводятся (как и хранятся) и незначащие нули при высоких степенях.</li>
-</ul>
-<h2>Сгенерирована документация с помощью Doxygen. HTML-документация находится в Docs/html. Главная страница - Docs/html/index.html</h2>
-</div></div><!-- contents -->
+<p>Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов Пример использования приведен в</p>
+<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Создано системой &#160;<a href="http://www.doxygen.org/index.html">
