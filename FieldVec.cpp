@@ -32,6 +32,16 @@ FieldVec::FieldVec(FieldVec const &v){
     var = v.var;
 }
 
+FieldVec::FieldVec(unsigned long long t){
+    if(t == 0){
+        var.push_back(0);
+    }
+    while(t){
+        var.push_back(t % q);
+        t /= q;
+    }
+}
+
 int FieldVec::size() const{
     return var.size();
 }
@@ -317,13 +327,23 @@ BoolVec::BoolVec(BoolVec const &v){
     var = v.var;
 }
 
+BoolVec::BoolVec(unsigned long long t){
+    if(t == 0){
+        var.push_back(false);
+    }
+    while(t){
+        var.push_back(t & 1);
+        t >>= 1;
+    }
+}
+
 int BoolVec::size() const{
     return var.size();
 }
 
 void BoolVec::push_back(const bool &t){
         var.push_back(t);
-    }
+}
 
 bool BoolVec::operator[](const unsigned int &t){
     if(t >= var.size()){

@@ -68,6 +68,13 @@ public:
     FieldVec(std::vector<unsigned int> &v);
 
 
+    /** 
+    * @function FieldVec(std::vector<unsigned int> v) Конструктор.
+    * Записывает в var представление числа t в q-ричной системе счисления (в обратном порядке)
+    */
+    FieldVec(unsigned long long t);
+
+
     FieldVec(FieldVec const &v);
 
     /**
@@ -256,6 +263,12 @@ public:
 
 
     BoolVec(BoolVec const &v);
+
+    /** 
+    * @function FieldVec(std::vector<unsigned int> v) Конструктор.
+    * Записывает в var представление числа t в двоичной системе счисления (в обратном порядке)
+    */
+    BoolVec(unsigned long long t);
 
     /**
     * @function push_back(unsigned int t) Функция расширения вектора коэффициентов полинома.
