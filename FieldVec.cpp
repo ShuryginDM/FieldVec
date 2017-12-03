@@ -41,7 +41,7 @@ void FieldVec::push_back(const unsigned int &t){
     }
 
 unsigned int &FieldVec::operator[](const unsigned int &t){
-    if(t > var.size()){
+    if(t >= var.size()){
         for(unsigned int i = var.size(); i <= t; i++){
             var.push_back(0);
         }
@@ -59,6 +59,17 @@ FieldVec FieldVec::operator+(const FieldVec &v){
         sum_.var.push_back(var[i]);
     }
     return sum_;
+}
+
+FieldVec &FieldVec::operator+=(const FieldVec &v){    
+    unsigned int mn = v.size() < var.size() ? v.size() : var.size();
+    for(unsigned int i = 0; i < mn; i++){
+        var[i] = (var[i] + v.var[i]) % q;
+    }
+    for(unsigned int i = mn; i < var.size(); i++){
+        var.push_back(v.var[i]);
+    }
+    return *this;
 }
 
 FieldVec FieldVec::operator*(const FieldVec &v){
@@ -148,6 +159,9 @@ FieldVec FieldVec::operator%(const FieldVec &v){
             break;  
         }
     }
+    if(max_coef == 0){
+        throw DivisionOnZero{};
+    }
     std::vector<unsigned int> coefs(q, 0);
     unsigned int t_prev = 0, t_next;
     for(unsigned int i = 1; i < q; i++){
@@ -184,6 +198,9 @@ FieldVec FieldVec::operator/(FieldVec &v){
             max_coef_i = i;   
             break;
         }
+    }
+    if(max_coef == 0){
+        throw DivisionOnZero{};
     }
     std::vector<unsigned int> coefs(q, 0);
     unsigned int t_prev = 0, t_next;
@@ -233,6 +250,203 @@ void FieldVec::tex_print(std::ostream &os, const char *name){
         }
         if(var[i] != 1){
             os << var[i] << " ";
+        }
+        os << name << " ";
+        if(i != 1){
+            os << "^ { " << i << " } ";
+        }
+    }
+    if(var[0]){
+        if(not_zero){
+            os << "+ ";
+        }else{
+            not_zero = true;
+        }
+        os << var[0];
+    }
+    if(!not_zero){
+        os << "0";
+    }
+}
+
+void FieldVec::set(const unsigned int &z, const unsigned int &t){
+    var[z] = t & q;
+}
+
+
+
+
+BoolVec::BoolVec(void){
+    var.push_back(0);
+}
+
+BoolVec::BoolVec(std::vector<bool> &v){
+    for(auto i = v.begin(); i < v.end(); i++){
+        var.push_back(*i % 2);
+    }
+    if(v.size() == 0){
+        var.push_back(0);
+    }
+}
+
+
+BoolVec::BoolVec(BoolVec const &v){
+    var = v.var;
+}
+
+int BoolVec::size() const{
+    return var.size();
+}
+
+void BoolVec::push_back(const bool &t){
+        var.push_back(t);
+    }
+
+bool BoolVec::operator[](const unsigned int &t){
+    if(t >= var.size()){
+        return false;
+    }
+    return var[t];
+}
+
+BoolVec BoolVec::operator+(const BoolVec &v){
+    BoolVec sum_ = v;      
+    unsigned int mn = sum_.size() < var.size() ? sum_.size() : var.size();
+    for(unsigned int i = 0; i < mn; i++){
+        sum_.var[i] = sum_[i] ^ var[i];
+    }
+    for(unsigned int i = mn; i < var.size(); i++){
+        sum_.var.push_back(var[i]);
+    }
+    return sum_;
+}
+
+BoolVec &BoolVec::operator+=(const BoolVec &v){    
+    unsigned int mn = v.size() < var.size() ? v.size() : var.size();
+    for(unsigned int i = 0; i < mn; i++){
+        var[i] = var[i] ^ v.var[i];
+    }
+    for(unsigned int i = mn; i < var.size(); i++){
+        var.push_back(v.var[i]);
+    }
+    return *this;
+}
+
+BoolVec BoolVec::operator*(const BoolVec &v){
+    std::vector<bool> z(v.size() + var.size() - 1, 0);
+    BoolVec mul_(z);
+    for(unsigned int i = 0; i < var.size(); i++){
+        for(unsigned int j = 0; j < v.size(); j++){
+            mul_.var[i + j] = mul_[i + j] ^ (var[i] & v.var[j]);
+        }
+    }
+    return mul_;
+}
+
+BoolVec &BoolVec::operator*=(const BoolVec &v){
+    std::vector<bool> z(v.size() + var.size() - 1, 0);
+    BoolVec mul_(z);
+    for(unsigned int i = 0; i < var.size(); i++){
+        for(unsigned int j = 0; j < v.size(); j++){
+            mul_.var[i + j] = mul_.var[i + j] ^ (var[i] & v.var[j]);
+        }
+    }
+    var = mul_.var;
+    return *this;
+}
+
+bool BoolVec::operator==(const BoolVec &v){
+    const BoolVec *mn_i, *mx_i;
+    if(v.size() > var.size()){
+        mn_i = this;
+        mx_i = &v;    
+    }else{
+        mn_i = &v;
+        mx_i = this;
+    }
+    const BoolVec &mn = *mn_i, &mx = *mx_i;
+    for(unsigned int i = mx.var.size() - 1; i >= mn.var.size(); i--){
+        if(mx.var[i]){
+            return false;
+        }
+    }
+    for(unsigned int i = 0; i < mn.var.size(); i++){
+        if(mx.var[i] != mn.var[i]){
+            return false;
+        }
+    }
+    return true;
+}
+
+BoolVec BoolVec::operator%(const BoolVec &v){
+    unsigned int max_coef_i = 0;
+    bool max_coef = 0;
+    for(unsigned int i = v.size() - 1; i > 0; i--){
+        if(v.var[i]){
+            max_coef = v.var[i];
+            max_coef_i = i; 
+            break;  
+        }
+    }
+    if(max_coef == 0){
+        throw DivisionOnZero{};
+    }
+    BoolVec rem_ = *this;
+    unsigned int t;
+    for(int i = rem_.size() - 1; i >= max_coef_i; i--){
+        if(rem_[i]){
+            for(unsigned int j = 0; j <= max_coef_i; j++){
+                rem_.var[i - max_coef_i + j] = rem_[i - max_coef_i + j] ^ (rem_[i] & v.var[j]);
+            }
+        }
+    }
+    return rem_;
+}
+
+BoolVec BoolVec::operator/(BoolVec &v){
+    unsigned int max_coef_i = 0;
+    bool max_coef = 0;
+    for(unsigned int i = v.size() - 1; i > 0; i--){
+        if(v.var[i]){
+            max_coef = v.var[i];
+            max_coef_i = i; 
+            break;  
+        }
+    }
+    if(max_coef == 0){
+        throw DivisionOnZero{};
+    }
+    std::vector<bool> z(var.size() - max_coef_i, 0);
+    BoolVec div_(z);
+    BoolVec rem_ = *this;
+    unsigned int t;
+    for(int i = rem_.size() - 1; i >= max_coef_i; i--){
+        if(rem_[i]){
+            for(unsigned int j = 0; j <= max_coef_i; j++){
+                rem_.var[i - max_coef_i + j] =  rem_[i - max_coef_i + j] ^ (rem_[i] & v.var[j]);
+                div_.var[i - max_coef_i] = t;
+            }
+        }
+    }
+}
+
+void BoolVec::set(const unsigned int &z, const bool &b){
+    for(int i = var.size(); i <= z; i++){
+        var.push_back(0);
+    }
+    var[z] = b;
+}
+
+void BoolVec::tex_print(std::ostream &os, const char *name){
+    bool not_zero = false;
+    for(int i = this->size() - 1; i > 0; i--){
+        if(!(var[i])){
+            continue;
+        }
+        if(not_zero){
+            os << "+ ";
+        }else{
+            not_zero = true;
         }
         os << name << " ";
         if(i != 1){

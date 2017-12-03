@@ -47,8 +47,8 @@ public:
     
     /**
     * @function FieldVec(void) Конструктор. При таком создании полином представляется в виде 0 * x ^ 0
-    * @throw NullField если при инициализации первой переменной класса FieldVec было подано значение p == 0
-    * @throw OneField если при инициализации первой переменной класса FieldVec было подано значение p == 1
+    * @throw NullField если q == 0
+    * @throw OneField если q == 1
     */
     FieldVec(void);
 
@@ -56,8 +56,8 @@ public:
     * @function FieldVec(std::vector<unsigned int> v) Конструктор. Если в векторе v нет элементов, то полином представляется в виде 0 * x ^ 0,
     * иначе - коэффициентом при x^i будет v[i] 
     * @param[in] v Вектор коэффициентов. В v[i] коэффициент при x^i.
-    * @throw NullField Если при инициализации первой переменной класса FieldVec было подано значение p == 0
-    * @throw OneField Если при инициализации первой переменной класса FieldVec было подано значение p == 1
+    * @throw NullField Если q == 0
+    * @throw OneField Если q == 1
     */
     FieldVec(std::vector<unsigned int> &v);
 
@@ -174,7 +174,7 @@ public:
     * @code
     * (2;3;1)
     * @endcode
-    * а в переменной r хранится вектор коэффициентов
+    * а в переменной FieldVec r хранится вектор коэффициентов
     * @code
     * (3;2;1)
     * @endcode
@@ -192,6 +192,12 @@ public:
     */
     void tex_print(std::ostream &os, const char *name = "x");
 
+
+    /**
+    * @function set Устанавливает коэфиициент при x ^ z равным t % q 
+    */
+    void set(const unsigned int &z, const unsigned int &t);
+
 private:
     /**
     * @var var - вектор коэффициентов. var[i] - коэффициент при x^i
@@ -199,6 +205,169 @@ private:
     * var[0] == 0
     */
     std::vector<unsigned int> var;
+    
+};
+
+
+/**
+* Основной класс. Реализует работу с кольцом многочленов над полем вычетов из 2 элементов
+* Лучше оптимизирован, чем FieldVec с q == 2
+*/
+class BoolVec{
+
+public:
+    
+    /**
+    * @function FieldVec(void) Конструктор. При таком создании полином представляется в виде 0 * x ^ 0
+    */
+    BoolVec(void);
+
+    /**
+    * @function FieldVec(std::vector<unsigned int> v) Конструктор. Если в векторе v нет элементов, то полином представляется в виде 0 * x ^ 0,
+    * иначе - коэффициентом при x^i будет v[i] 
+    * @param[in] v Вектор коэффициентов. В v[i] коэффициент при x^i.
+    */
+    BoolVec(std::vector<bool> &v);
+
+
+    BoolVec(BoolVec const &v);
+
+    /**
+    * @function push_back(unsigned int t) Функция расширения вектора коэффициентов полинома.
+    * @param[in] t Если хранится полином с максимальной степенью s (перед которой коэффициент, возможно, равен 0), то
+    * к этому полиному добавляется t * q ^ (s + 1).
+    */
+    void push_back(const bool &t);
+    /**
+    * @function size Показывает, сколько элементов находится в векторе коэффициентов
+    * @return Максимальная степень x в этом многочлене (перед которой коэффициент, возможно, равен 0)
+    */
+    int size() const;
+
+    /**
+    * @param[in] t Степень монома x ^ t
+    * @return rvalue коэффициент при x ^ t в полиноме
+    */
+    bool operator[](const unsigned int &t);
+
+    /**
+    * @function operator+ Оператор сложения полиномов в кольце полиномов над кольцом вычетов по модулю 2
+    */
+    BoolVec operator+(const BoolVec &v);
+    /**
+    * @function operator+= Оператор сложения полиномов в кольце полиномов над кольцом вычетов по модулю 2
+    */
+    BoolVec &operator+=(const BoolVec &v);
+
+    /**
+    * @function operator* Оператор умножения полиномов в кольце полиномов над кольцом вычетов по модулю 2
+    */
+    BoolVec operator*(const BoolVec &v);
+
+    /**
+    * @function operator*= Оператор умножения полиномов в кольце полиномов над кольцом вычетов по модулю 2
+    */
+    BoolVec &operator*=(const BoolVec &v);
+
+    /**
+    * @function operator== Оператор сравнение полиномов на равенство в кольце полиномов над кольцом вычетов по модулю 2
+    */
+    bool operator==(const BoolVec &v);
+
+
+    BoolVec operator-();
+
+    BoolVec operator-(const BoolVec &v);
+
+    BoolVec &operator-=(const BoolVec &v);
+
+
+    /**
+    * @function operator% Оператор вычисления остатка от деления полиномов в кольце полиномов над полем вычетов по модулю 2
+    * @throw DivisionOnZero если v - вектор, состоящий из 0
+    * @return остаток от деления на полином v
+    */
+    BoolVec operator%(const BoolVec &v);
+
+    /**
+    * @function operator/ Оператор вычисления результата деления полиномов в кольце полиномов над полем вычетов по модулю 2
+    * @throw DivisionOnZero если v - вектор, состоящий из 0
+    * @return результат деления на полином v
+    */
+    BoolVec operator/(BoolVec &v);
+
+    friend std::ostream& operator<<(std::ostream &os, const BoolVec &v){
+        os << "(";
+        for(int i = 0; i < v.size() - 1; i++){
+            os << v.var[i] << ";";
+        }
+        os << v.var[v.size() - 1];
+        os << ")";
+        return os;
+    }
+
+    /**
+    * @function tex_print
+    * @brief Вывод полинома наподобие формулы LaTeX.
+    * 
+    * 
+    * @param[in] std::ostream &os - поток вывода
+    * @param[in] char *name - имя переменной (по умолчанию "x")
+    *
+    * ##Пример использования 1:
+    *
+    * Пусть BoolVec p хранится вектор коэффициентов
+    * @code
+    * (0;1;1)
+    * @endcode
+    * Тогда в результате выполнения команды
+    * @code
+    * p.tex_print(std::cout);
+    * @endcode
+    * на стандартный поток вывода поступит
+    * @code
+    * x ^ { 2 } + x 
+    * @endcode
+    *
+    * И сама формула выглядит так:
+    * \f[x ^ { 2 } + x \f]
+    *
+    * ##Пример использования 2:
+    *
+    * Пусть BoolVec p хранится вектор коэффициентов
+    * @code
+    * (0;1;1)
+    * @endcode
+    * а в переменной BoolVec r хранится вектор коэффициентов
+    * @code
+    * (1;1;1)
+    * @endcode
+    * Тогда в результате выполнения команды
+    * @code
+    * (p * r).tex_print(std::cout, "v_{12}");
+    * @endcode
+    * на стандартный поток вывода поступит
+    * @code
+    * v_{12} ^ { 4 } + v_{12}
+    * @endcode
+    *
+    * И сама формула выглядит так:
+    * \f[v_{12} ^ { 4 } + v_{12} \f]
+    */
+    void tex_print(std::ostream &os, const char *name = "x");
+
+    /**
+    * @function set Устанавливает коэфиициент при x ^ z равным b 
+    */
+    void set(const unsigned int &z, const bool &b);
+
+private:
+    /**
+    * @var var - вектор коэффициентов. var[i] - коэффициент при x^i
+    * Если не было явного объявления коэффициентов вектора, то в var лежит ровно одно значение:
+    * var[0] == 0
+    */
+    std::vector<bool> var;
     
 };
 

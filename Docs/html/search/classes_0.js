@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['divisiononzero',['DivisionOnZero',['../classDivisionOnZero.html',1,'']]]
+  ['boolvec',['BoolVec',['../classBoolVec.html',1,'']]]
 ];
