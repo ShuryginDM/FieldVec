@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Библиотека работы с кольцом полиномов над кольцом вычетов по модулю q: Класс FieldVec</title>
+<title>My Project: Класс FieldVec</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -14,6 +14,12 @@
 <script type="text/javascript">
   $(document).ready(function() { init_search(); });
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Библиотека работы с кольцом полиномов над кольцом вычетов по модулю q
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -39,7 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
     <ul class="tablist">
       <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
       <li><a href="pages.html"><span>Описания</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
       <li><a href="files.html"><span>Файлы</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -61,9 +67,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Классы</span></a></li>
-      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
-      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;структур&#160;данных</span></a></li>
+      <li><a href="functions.html"><span>Поля&#160;структур</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -85,8 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
   <div class="summary">
 <a href="#pub-methods">Открытые члены</a> &#124;
 <a href="#pub-static-attribs">Статические открытые данные</a> &#124;
-<a href="#friends">Друзья</a> &#124;
-<a href="classFieldVec-members.html">Полный список членов класса</a>  </div>
+<a href="#friends">Друзья</a>  </div>
   <div class="headertitle">
 <div class="title">Класс FieldVec</div>  </div>
 </div><!--header-->
@@ -107,16 +112,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <tr class="separator:a33bd8492ed69ad28bd4ec0731b6dc0dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24538e4d024b31bbfc90bec14da469bd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#a24538e4d024b31bbfc90bec14da469bd">size</a> () const </td></tr>
 <tr class="separator:a24538e4d024b31bbfc90bec14da469bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8a25eb9c8de78d92613b54a459095ad"><td class="memItemLeft" align="right" valign="top">unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#ab8a25eb9c8de78d92613b54a459095ad">operator[]</a> (const unsigned int &amp;t)</td></tr>
-<tr class="separator:ab8a25eb9c8de78d92613b54a459095ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa2eb4d99b1db8a57332b11e029bf0a8"><td class="memItemLeft" align="right" valign="top">unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#aaa2eb4d99b1db8a57332b11e029bf0a8">operator[]</a> (const unsigned int &amp;t)</td></tr>
+<tr class="separator:aaa2eb4d99b1db8a57332b11e029bf0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af11685082743e8aa2e0cada4856323e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFieldVec.html">FieldVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#af11685082743e8aa2e0cada4856323e3">operator+</a> (const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
 <tr class="separator:af11685082743e8aa2e0cada4856323e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64975fe90ab16fa5096b93c80f4e78ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFieldVec.html">FieldVec</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#a64975fe90ab16fa5096b93c80f4e78ef">operator+=</a> (const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
 <tr class="separator:a64975fe90ab16fa5096b93c80f4e78ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03c3f3d0f198eba6f6d57118d272a597"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFieldVec.html">FieldVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#a03c3f3d0f198eba6f6d57118d272a597">operator*</a> (const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
 <tr class="separator:a03c3f3d0f198eba6f6d57118d272a597"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a8eb8e5fec118e02b50277728a09318"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFieldVec.html">FieldVec</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#a9a8eb8e5fec118e02b50277728a09318">operator*=</a> (const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
-<tr class="separator:a9a8eb8e5fec118e02b50277728a09318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae89adcdc0337b47829791938d4721d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFieldVec.html">FieldVec</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#aae89adcdc0337b47829791938d4721d0">operator*=</a> (const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
+<tr class="separator:aae89adcdc0337b47829791938d4721d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaecf0557a6b40680a3a8cd32d55fc6af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#aaecf0557a6b40680a3a8cd32d55fc6af">operator==</a> (const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
 <tr class="separator:aaecf0557a6b40680a3a8cd32d55fc6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a319d2cec605c7e2e0b8695f71d370c1a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a319d2cec605c7e2e0b8695f71d370c1a"></a>
@@ -125,13 +130,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <tr class="memitem:a747cf999814cf27a93628877d2d9c0ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a747cf999814cf27a93628877d2d9c0ca"></a>
 <a class="el" href="classFieldVec.html">FieldVec</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
 <tr class="separator:a747cf999814cf27a93628877d2d9c0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21cdf3a0b20a60ebbf6e96240aa38fbc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a21cdf3a0b20a60ebbf6e96240aa38fbc"></a>
+<tr class="memitem:a4b0c7388ee4fa77a0b3956bffe4bfd51"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b0c7388ee4fa77a0b3956bffe4bfd51"></a>
 <a class="el" href="classFieldVec.html">FieldVec</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator-=</b> (const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
-<tr class="separator:a21cdf3a0b20a60ebbf6e96240aa38fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a4b0c7388ee4fa77a0b3956bffe4bfd51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72f3dbcbd414aa249022c07e95c06697"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFieldVec.html">FieldVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#a72f3dbcbd414aa249022c07e95c06697">operator%</a> (const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
 <tr class="separator:a72f3dbcbd414aa249022c07e95c06697"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6948f0900dc28815ec0c376d1078a71f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFieldVec.html">FieldVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#a6948f0900dc28815ec0c376d1078a71f">operator/</a> (<a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
 <tr class="separator:a6948f0900dc28815ec0c376d1078a71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58bf4da4f4b15adea0fd3ef4cc754b2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#a58bf4da4f4b15adea0fd3ef4cc754b2f">tex_print</a> (std::ostream &amp;os, const char *name=&quot;x&quot;)</td></tr>
+<tr class="memdesc:a58bf4da4f4b15adea0fd3ef4cc754b2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вывод полинома наподобие формулы LaTeX.  <a href="#a58bf4da4f4b15adea0fd3ef4cc754b2f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a58bf4da4f4b15adea0fd3ef4cc754b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Статические открытые данные</h2></td></tr>
@@ -146,14 +154,11 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <tr class="separator:af44fecec442c0482b141033a2ec3038a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Основной класс. Реализует работу с кольцами многочленов над кольцом вычетов из q элементов </p>
+<div class="textblock"><p>Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов </p>
 </div><h2 class="groupheader">Конструктор(ы)</h2>
 <a class="anchor" id="aa322a779814ca5a8046f677b756f7700"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">FieldVec::FieldVec </td>
@@ -163,11 +168,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p><a class="el" href="classFieldVec.html#aa322a779814ca5a8046f677b756f7700">FieldVec(void)</a> Конструктор. При таком создании полином представляется в виде 0 * x ^ 0 </p><dl class="exception"><dt>Исключения</dt><dd>
   <table class="exception">
@@ -182,9 +182,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <a class="anchor" id="aadca19ec6c88d7a3aa8e4374cce52fb4"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">FieldVec::FieldVec </td>
@@ -194,11 +191,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p><a class="el" href="classFieldVec.html">FieldVec(std::vector&lt;unsigned int&gt; v)</a> Конструктор. Если в векторе v нет элементов, то полином представляется в виде 0 * x ^ 0, иначе - коэффициентом при x^i будет v[i] </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
@@ -220,9 +212,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <a class="anchor" id="a72f3dbcbd414aa249022c07e95c06697"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classFieldVec.html">FieldVec</a> FieldVec::operator% </td>
@@ -232,15 +221,10 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>operator% Оператор вычисления остатка от деления полиномов в кольце полиномов над полем вычетов по модулю q </p><dl class="exception"><dt>Исключения</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classNotPrimal.html">NotPrimal</a></td><td>если q - не простое число </td></tr>
+    <tr><td class="paramname"><a class="el" href="classNotPrimal.html">NotPrimal</a></td><td>если q - не простое число (в данном случае если коэффициент при наивысшей степени x является делителем q и при этом не равен q) </td></tr>
     <tr><td class="paramname"><a class="el" href="classDivisionOnZero.html">DivisionOnZero</a></td><td>если v - вектор, состоящий из 0 </td></tr>
   </table>
   </dd>
@@ -252,9 +236,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <a class="anchor" id="a03c3f3d0f198eba6f6d57118d272a597"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classFieldVec.html">FieldVec</a> FieldVec::operator* </td>
@@ -264,36 +245,23 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>operator* Оператор умножения полиномов в кольце полиномов над кольцом вычетов по модулю q </p>
 
 </div>
 </div>
-<a class="anchor" id="a9a8eb8e5fec118e02b50277728a09318"></a>
+<a class="anchor" id="aae89adcdc0337b47829791938d4721d0"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classFieldVec.html">FieldVec</a>&amp; FieldVec::operator*= </td>
+          <td class="memname"><a class="el" href="classFieldVec.html">FieldVec</a> &amp; FieldVec::operator*= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>operator*= Оператор умножения полиномов в кольце полиномов над кольцом вычетов по модулю q </p>
 
@@ -302,9 +270,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <a class="anchor" id="af11685082743e8aa2e0cada4856323e3"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classFieldVec.html">FieldVec</a> FieldVec::operator+ </td>
@@ -314,11 +279,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>operator+ Оператор сложения полиномов в кольце полиномов над кольцом вычетов по модулю q </p>
 
@@ -327,9 +287,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <a class="anchor" id="a64975fe90ab16fa5096b93c80f4e78ef"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classFieldVec.html">FieldVec</a>&amp; FieldVec::operator+= </td>
@@ -339,11 +296,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>operator+= Оператор сложения полиномов в кольце полиномов над кольцом вычетов по модулю q </p>
 
@@ -352,9 +304,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <a class="anchor" id="a6948f0900dc28815ec0c376d1078a71f"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classFieldVec.html">FieldVec</a> FieldVec::operator/ </td>
@@ -364,11 +313,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>operator/ Оператор вычисления результата деления полиномов в кольце полиномов над полем вычетов по модулю q </p><dl class="exception"><dt>Исключения</dt><dd>
   <table class="exception">
@@ -384,9 +328,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <a class="anchor" id="aaecf0557a6b40680a3a8cd32d55fc6af"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool FieldVec::operator== </td>
@@ -396,36 +337,23 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>operator== Оператор сравнение полиномов на равенство в кольце полиномов над кольцом вычетов по модулю q </p>
 
 </div>
 </div>
-<a class="anchor" id="ab8a25eb9c8de78d92613b54a459095ad"></a>
+<a class="anchor" id="aaa2eb4d99b1db8a57332b11e029bf0a8"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int&amp; FieldVec::operator[] </td>
+          <td class="memname">unsigned int &amp; FieldVec::operator[] </td>
           <td>(</td>
           <td class="paramtype">const unsigned int &amp;&#160;</td>
           <td class="paramname"><em>t</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
@@ -440,9 +368,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <a class="anchor" id="a33bd8492ed69ad28bd4ec0731b6dc0dc"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void FieldVec::push_back </td>
@@ -452,11 +377,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>push_back(unsigned int t) Функция расширения вектора коэффициентов полинома. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
@@ -470,9 +390,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <a class="anchor" id="a24538e4d024b31bbfc90bec14da469bd"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int FieldVec::size </td>
@@ -481,18 +398,57 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>size Показывает, сколько элементов находится в векторе коэффициентов </p><dl class="section return"><dt>Возвращает</dt><dd>Максимальная степень x в этом многочлене (перед которой коэффициент, возможно, равен 0) </dd></dl>
 
 </div>
 </div>
-<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<a class="anchor" id="a58bf4da4f4b15adea0fd3ef4cc754b2f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FieldVec::tex_print </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;x&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вывод полинома наподобие формулы LaTeX. </p>
+<p>tex_print </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">std::ostream</td><td>&amp;os - поток вывода </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">char</td><td>*name - имя переменной (по умолчанию "x")</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2>Пример использования 1:</h2>
+<p>Пусть q == 5, а в переменной <a class="el" href="classFieldVec.html">FieldVec</a> p хранится вектор коэффициентов </p><div class="fragment"><div class="line">(0;2;1;3;2;3)</div></div><!-- fragment --><p> Тогда в результате выполнения команды </p><div class="fragment"><div class="line">p.tex_print(std::cout);</div></div><!-- fragment --><p> на стандартный поток вывода поступит </p><div class="fragment"><div class="line">3 x ^ { 5 } + 2 x ^ { 4 } + 3 x ^ { 3 } + x ^ { 2 } + 2 x </div></div><!-- fragment --><p>И сама формула выглядит так: </p><p class="formulaDsp">
+\[3 x ^ { 5 } + 2 x ^ { 4 } + 3 x ^ { 3 } + x ^ { 2 } + 2 x \]
+</p>
+<h2>Пример использования 2:</h2>
+<p>Пусть q == 4, в переменной <a class="el" href="classFieldVec.html">FieldVec</a> p хранится вектор коэффициентов </p><div class="fragment"><div class="line">(2;3;1)</div></div><!-- fragment --><p> а в переменной r хранится вектор коэффициентов </p><div class="fragment"><div class="line">(3;2;1)</div></div><!-- fragment --><p> Тогда в результате выполнения команды </p><div class="fragment"><div class="line">(p * r).<a class="code" href="classFieldVec.html#a58bf4da4f4b15adea0fd3ef4cc754b2f">tex_print</a>(std::cout, <span class="stringliteral">&quot;v_{12}&quot;</span>);</div></div><!-- fragment --><p> на стандартный поток вывода поступит </p><div class="fragment"><div class="line">v_{12} ^ { 4 } + v_{12} ^ { 3 } + 3 v_{12} ^ { 2 } + v_{12} + 2</div></div><!-- fragment --><p>И сама формула выглядит так: </p><p class="formulaDsp">
+\[v_{12} ^ { 4 } + v_{12} ^ { 3 } + 3 v_{12} ^ { 2 } + v_{12} + 2 \]
+</p>
+ 
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
 <li><a class="el" href="FieldVec_8h_source.html">FieldVec.h</a></li>
+<li>FieldVec.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

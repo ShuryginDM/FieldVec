@@ -1,8 +1,8 @@
 var indexSectionsWithContent =
 {
-  0: "dfnopsÐ",
+  0: "dfnopstÐ",
   1: "dfno",
-  2: "fops",
+  2: "fopst",
   3: "Ð"
 };
 
@@ -17,7 +17,7 @@ var indexSectionNames =
 var indexSectionLabels =
 {
   0: "Указатель",
-  1: "Классы",
+  1: "Структуры данных",
   2: "Функции",
   3: "Страницы"
 };
