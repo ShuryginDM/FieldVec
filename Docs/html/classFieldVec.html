@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>My Project: Класс FieldVec</title>
+<title>FieldVec: Класс FieldVec</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">FieldVec
    </div>
   </td>
  </tr>
@@ -155,8 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Статические открытые данные</h2></td></tr>
-<tr class="memitem:a69217baa6b405ef48033ec4b923b1417"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a69217baa6b405ef48033ec4b923b1417"></a>
-static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>q</b> = 0</td></tr>
+<tr class="memitem:a69217baa6b405ef48033ec4b923b1417"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#a69217baa6b405ef48033ec4b923b1417">q</a> = 0</td></tr>
 <tr class="separator:a69217baa6b405ef48033ec4b923b1417"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -168,7 +167,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Основной класс. </p>
 <p>Реализует работу с кольцом многочленов над кольцом вычетов из q элементов Пример использования приведен в </p>
-<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#_a4">Example1.cpp</a>.</dd>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#_a5">Example1.cpp</a> и <a class="el" href="Example1_1_8cpp-example.html#_a5">Example1_1.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Конструктор(ы)</h2>
 <a class="anchor" id="aa322a779814ca5a8046f677b756f7700"></a>
 <div class="memitem">
@@ -449,7 +448,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
   </table>
   </dd>
 </dl>
-<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a5">Example1.cpp</a>.</dd>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a6">Example1.cpp</a> и <a class="el" href="Example1_1_8cpp-example.html#a6">Example1_1.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -493,7 +492,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
       </table>
 </div><div class="memdoc">
 <p>size Показывает, сколько элементов находится в векторе коэффициентов </p><dl class="section return"><dt>Возвращает</dt><dd>Максимальная степень x в этом многочлене (перед которой коэффициент, возможно, равен 0) </dd></dl>
-<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a6">Example1.cpp</a>.</dd>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a7">Example1.cpp</a> и <a class="el" href="Example1_1_8cpp-example.html#a7">Example1_1.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -537,7 +536,36 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <p>Пусть q == 4, в переменной <a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec</a> p хранится вектор коэффициентов </p><div class="fragment"><div class="line">(2;3;1)</div></div><!-- fragment --><p> а в переменной <a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec</a> r хранится вектор коэффициентов </p><div class="fragment"><div class="line">(3;2;1)</div></div><!-- fragment --><p> Тогда в результате выполнения команды </p><div class="fragment"><div class="line">(p * r).<a class="code" href="classFieldVec.html#a58bf4da4f4b15adea0fd3ef4cc754b2f">tex_print</a>(std::cout, <span class="stringliteral">&quot;v_{12}&quot;</span>);</div></div><!-- fragment --><p> на стандартный поток вывода поступит </p><div class="fragment"><div class="line">v_{12} ^ { 4 } + v_{12} ^ { 3 } + 3 v_{12} ^ { 2 } + v_{12} + 2</div></div><!-- fragment --><p>И сама формула выглядит так: </p><p class="formulaDsp">
 \[v_{12} ^ { 4 } + v_{12} ^ { 3 } + 3 v_{12} ^ { 2 } + v_{12} + 2 \]
 </p>
- <dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a7">Example1.cpp</a>.</dd>
+ <dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a8">Example1.cpp</a> и <a class="el" href="Example1_1_8cpp-example.html#a8">Example1_1.cpp</a>.</dd>
+</dl>
+</div>
+</div>
+<h2 class="groupheader">Поля</h2>
+<a class="anchor" id="a69217baa6b405ef48033ec4b923b1417"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int FieldVec::q = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Статическая переменная. Возможна работа только с кольцом полиномов только над кольцом вычетов по одному модулю. <br />
+В начале программы явным образом должно быть прописано <br />
+</p><dl class="section warning"><dt>Предупреждения</dt><dd><a class="el" href="classFieldVec.html#a69217baa6b405ef48033ec4b923b1417">FieldVec::q</a> = &lt; Количество="" элементов="" кольца="" вычетов&gt;=""&gt;; (без &lt;&gt;) </dd>
+<dd>
+Программа может некорректно обрабатывать старые векторы при изменении q </dd>
+<dd>
+При q == 2 лучше использовать <a class="el" href="classBoolVec.html" title="Основной класс. ">BoolVec</a> </dd></dl>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a4">Example1.cpp</a> и <a class="el" href="Example1_1_8cpp-example.html#a4">Example1_1.cpp</a>.</dd>
 </dl>
 </div>
 </div>
