@@ -89,6 +89,8 @@ public:
     */
     int size() const;
 
+    int actual_size() const;
+
     /**
     * @param[in] t Степень монома x ^ t
     * @return lvalue коэффициент при x ^ t в полиноме. Если максимальная степень s (перед которой коэффициент, возможно, равен 0)
@@ -296,6 +298,8 @@ public:
     * @return Максимальная степень x в этом многочлене (перед которой коэффициент, возможно, равен 0)
     */
     int size() const;
+
+    int actual_size() const;
 
     /**
     * @param[in] t Степень монома x ^ t

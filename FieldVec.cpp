@@ -46,6 +46,15 @@ int FieldVec::size() const{
     return var.size();
 }
 
+int FieldVec::actual_size() const{
+    for(int i = this->size() - 1; i >= 0; i--){
+        if(var[i]){
+            return i + 1;
+        }
+    }
+    return 0;
+}
+
 void FieldVec::push_back(const unsigned int &t){
         var.push_back(t % q);
     }
@@ -234,12 +243,12 @@ FieldVec FieldVec::operator/(FieldVec &v){
         if(rem_[i]){
             for(int j = 0; j <= max_coef_i; j++){
                 t = (coefs[rem_[i]] * v.var[j]) % q;
+                div_[i - max_coef_i] = coefs[rem_[i]];
                 if(rem_[i - max_coef_i + j] > t){
                     rem_[i - max_coef_i + j] -= t;
                 }else{
                     rem_[i - max_coef_i + j] = (q + rem_[i - max_coef_i + j] - t) % q;
                 }
-                div_[i - max_coef_i] = t;
 
             }
         }
@@ -339,6 +348,15 @@ BoolVec::BoolVec(unsigned long long t){
 
 int BoolVec::size() const{
     return var.size();
+}
+
+int BoolVec::actual_size() const{
+    for(int i = this->size() - 1; i >= 0; i--){
+        if(var[i]){
+            return i + 1;
+        }
+    }
+    return 0;
 }
 
 void BoolVec::push_back(const bool &t){
