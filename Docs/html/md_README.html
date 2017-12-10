@@ -87,12 +87,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><hr/>
-<h1>При q = 2 лучше использовать <a class="el" href="classBoolVec.html" title="Основной класс. ">BoolVec</a> (лучше оптимизировано). <a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec</a> работает с q &gt;= 2</h1>
+<h1>При q = 2 лучше использовать <a class="el" href="classBoolVec.html" title="Основной класс. ">BoolVec</a> (лучше оптимизировано). <a class="el" href="classFieldVec.html" title="Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов.   Пример использования приведен в ">FieldVec</a> работает с q &gt;= 2</h1>
 <hr/>
-<h1>Одновременно возможна работа <a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec</a> sтолько с поляризованными полиномами над кольцом вычетов только по одному модулю (переменная q - статическая переменная класса)!</h1>
-<h1>Перед первой инициализацией объекта класса <a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec</a> <a class="el" href="classFieldVec.html#a69217baa6b405ef48033ec4b923b1417">FieldVec::q</a> должен быть явным образом проинициализирован:</h1>
+<h1>Одновременно возможна работа <a class="el" href="classFieldVec.html" title="Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов.   Пример использования приведен в ">FieldVec</a> sтолько с поляризованными полиномами над кольцом вычетов только по одному модулю (переменная q - статическая переменная класса)!</h1>
+<h1>Перед первой инициализацией объекта класса <a class="el" href="classFieldVec.html" title="Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов.   Пример использования приведен в ">FieldVec</a> <a class="el" href="classFieldVec.html#a69217baa6b405ef48033ec4b923b1417">FieldVec::q</a> должен быть явным образом проинициализирован:</h1>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;FieldVec::q = /*Количество элементов кольца вычетов*/;</div></div><!-- fragment --><p>В ином случае произойдет throw <a class="el" href="classNullField.html" title="Класс, используемый для того, чтобы показать тип исключения &quot;кольцо вычетов по модулю 0&quot;...">NullField</a>{}</p>
-<h1>Программа может некорректно обрабатывать старые векторы при изменении q в <a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec</a></h1>
+<h1>Программа может некорректно обрабатывать старые векторы при изменении q в <a class="el" href="classFieldVec.html" title="Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов.   Пример использования приведен в ">FieldVec</a></h1>
 <h2>Реализованы некоторые базовые операции, такие как:</h2>
 <ul>
 <li>Сложение полиномов</li>

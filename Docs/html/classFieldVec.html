@@ -98,7 +98,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 </div><!--header-->
 <div class="contents">
 
-<p>Основной класс.  
+<p>Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов. <br />
+ Пример использования приведен в  
  <a href="classFieldVec.html#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="FieldVec_8h_source.html">FieldVec.h</a>&gt;</code></p>
@@ -112,7 +113,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <tr class="memitem:a0f2dc3f543735078c4f52e0f583beb3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#a0f2dc3f543735078c4f52e0f583beb3d">FieldVec</a> (unsigned long long t)</td></tr>
 <tr class="separator:a0f2dc3f543735078c4f52e0f583beb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a589df59e92097b420feb988eccca602f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a589df59e92097b420feb988eccca602f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>FieldVec</b> (<a class="el" href="classFieldVec.html">FieldVec</a> const &amp;v)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#a589df59e92097b420feb988eccca602f">FieldVec</a> (<a class="el" href="classFieldVec.html">FieldVec</a> const &amp;v)</td></tr>
+<tr class="memdesc:a589df59e92097b420feb988eccca602f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор копирования <br /></td></tr>
 <tr class="separator:a589df59e92097b420feb988eccca602f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33bd8492ed69ad28bd4ec0731b6dc0dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#a33bd8492ed69ad28bd4ec0731b6dc0dc">push_back</a> (const unsigned int &amp;t)</td></tr>
 <tr class="separator:a33bd8492ed69ad28bd4ec0731b6dc0dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,13 +133,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <tr class="memitem:aaecf0557a6b40680a3a8cd32d55fc6af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#aaecf0557a6b40680a3a8cd32d55fc6af">operator==</a> (const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
 <tr class="separator:aaecf0557a6b40680a3a8cd32d55fc6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a319d2cec605c7e2e0b8695f71d370c1a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a319d2cec605c7e2e0b8695f71d370c1a"></a>
-<a class="el" href="classFieldVec.html">FieldVec</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> ()</td></tr>
+<a class="el" href="classFieldVec.html">FieldVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#a319d2cec605c7e2e0b8695f71d370c1a">operator-</a> ()</td></tr>
+<tr class="memdesc:a319d2cec605c7e2e0b8695f71d370c1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Унарный минус. Заменяет все коэффициенты c на q-c. <br /></td></tr>
 <tr class="separator:a319d2cec605c7e2e0b8695f71d370c1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a747cf999814cf27a93628877d2d9c0ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a747cf999814cf27a93628877d2d9c0ca"></a>
-<a class="el" href="classFieldVec.html">FieldVec</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
+<a class="el" href="classFieldVec.html">FieldVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#a747cf999814cf27a93628877d2d9c0ca">operator-</a> (const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
+<tr class="memdesc:a747cf999814cf27a93628877d2d9c0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">прибавляет к вектору (-v) <br /></td></tr>
 <tr class="separator:a747cf999814cf27a93628877d2d9c0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b0c7388ee4fa77a0b3956bffe4bfd51"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b0c7388ee4fa77a0b3956bffe4bfd51"></a>
-<a class="el" href="classFieldVec.html">FieldVec</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator-=</b> (const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
+<a class="el" href="classFieldVec.html">FieldVec</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#a4b0c7388ee4fa77a0b3956bffe4bfd51">operator-=</a> (const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
+<tr class="memdesc:a4b0c7388ee4fa77a0b3956bffe4bfd51"><td class="mdescLeft">&#160;</td><td class="mdescRight">прибавляет к вектору (-v) <br /></td></tr>
 <tr class="separator:a4b0c7388ee4fa77a0b3956bffe4bfd51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72f3dbcbd414aa249022c07e95c06697"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFieldVec.html">FieldVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#a72f3dbcbd414aa249022c07e95c06697">operator%</a> (const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
 <tr class="separator:a72f3dbcbd414aa249022c07e95c06697"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,13 +165,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Друзья</h2></td></tr>
-<tr class="memitem:af44fecec442c0482b141033a2ec3038a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af44fecec442c0482b141033a2ec3038a"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
+<tr class="memitem:af44fecec442c0482b141033a2ec3038a"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFieldVec.html#af44fecec442c0482b141033a2ec3038a">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;v)</td></tr>
 <tr class="separator:af44fecec442c0482b141033a2ec3038a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Основной класс. </p>
-<p>Реализует работу с кольцом многочленов над кольцом вычетов из q элементов Пример использования приведен в </p>
+<div class="textblock"><p>Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов. <br />
+ Пример использования приведен в </p>
 <dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#_a5">Example1.cpp</a> и <a class="el" href="Example1_1_8cpp-example.html#_a5">Example1_1.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Конструктор(ы)</h2>
 <a class="anchor" id="aa322a779814ca5a8046f677b756f7700"></a>
@@ -205,7 +209,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec(std::vector&lt;unsigned int&gt; v)</a> Конструктор. Если в векторе v нет элементов, то полином представляется в виде 0 * x ^ 0, иначе - коэффициентом при x^i будет v[i] </p><dl class="params"><dt>Аргументы</dt><dd>
+<p><a class="el" href="classFieldVec.html" title="Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов.   Пример использования приведен в ">FieldVec(std::vector&lt;unsigned int&gt; v)</a> Конструктор. Если в векторе v нет элементов, то полином представляется в виде 0 * x ^ 0, иначе - коэффициентом при x^i будет v[i] </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>Вектор коэффициентов. В v[i] коэффициент при x^i. </td></tr>
   </table>
@@ -234,7 +238,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec(std::vector&lt;unsigned int&gt; v)</a> Конструктор. Записывает в var представление числа t в q-ричной системе счисления (в обратном порядке) </p>
+<p><a class="el" href="classFieldVec.html" title="Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов.   Пример использования приведен в ">FieldVec(std::vector&lt;unsigned int&gt; v)</a> Конструктор. Записывает в var представление числа t в q-ричной системе счисления (в обратном порядке) </p>
 
 </div>
 </div>
@@ -327,7 +331,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Префиксный инкремент. Подразумевается, что если v - объект класса <a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec</a>, то после ++v к var[0] прибавляется 1. Если var[0] + 1 == q, то var[0] становится равным 0, а к var[1] прибавляется 1 (и так до тех пор, пока не дойдет до var[i], такого, что var[i] + 1 != q) </p>
+<p>Префиксный инкремент. Подразумевается, что если v - объект класса <a class="el" href="classFieldVec.html" title="Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов.   Пример использования приведен в ">FieldVec</a>, то после ++v к var[0] прибавляется 1. Если var[0] + 1 == q, то var[0] становится равным 0, а к var[1] прибавляется 1 (и так до тех пор, пока не дойдет до var[i], такого, что var[i] + 1 != q) </p>
 
 </div>
 </div>
@@ -344,7 +348,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Постфиксный инкремент. Подразумевается, что если v - объект класса <a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec</a>, то после v++ к var[0] прибавляется 1. Если var[0] + 1 == q, то var[0] становится равным 0, а к var[1] прибавляется 1 (и так до тех пор, пока не дойдет до var[i], такого, что var[i] + 1 != q) </p>
+<p>Постфиксный инкремент. Подразумевается, что если v - объект класса <a class="el" href="classFieldVec.html" title="Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов.   Пример использования приведен в ">FieldVec</a>, то после v++ к var[0] прибавляется 1. Если var[0] + 1 == q, то var[0] становится равным 0, а к var[1] прибавляется 1 (и так до тех пор, пока не дойдет до var[i], такого, что var[i] + 1 != q) </p>
 
 </div>
 </div>
@@ -529,15 +533,51 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
   </dd>
 </dl>
 <h2>Пример использования 1:</h2>
-<p>Пусть q == 5, а в переменной <a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec</a> p хранится вектор коэффициентов </p><div class="fragment"><div class="line">(0;2;1;3;2;3)</div></div><!-- fragment --><p> Тогда в результате выполнения команды </p><div class="fragment"><div class="line">p.tex_print(std::cout);</div></div><!-- fragment --><p> на стандартный поток вывода поступит </p><div class="fragment"><div class="line">3 x ^ { 5 } + 2 x ^ { 4 } + 3 x ^ { 3 } + x ^ { 2 } + 2 x </div></div><!-- fragment --><p>И сама формула выглядит так: </p><p class="formulaDsp">
+<p>Пусть q == 5, а в переменной <a class="el" href="classFieldVec.html" title="Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов.   Пример использования приведен в ">FieldVec</a> p хранится вектор коэффициентов </p><div class="fragment"><div class="line">(0;2;1;3;2;3)</div></div><!-- fragment --><p> Тогда в результате выполнения команды </p><div class="fragment"><div class="line">p.tex_print(std::cout);</div></div><!-- fragment --><p> на стандартный поток вывода поступит </p><div class="fragment"><div class="line">3 x ^ { 5 } + 2 x ^ { 4 } + 3 x ^ { 3 } + x ^ { 2 } + 2 x </div></div><!-- fragment --><p>И сама формула выглядит так: </p><p class="formulaDsp">
 \[3 x ^ { 5 } + 2 x ^ { 4 } + 3 x ^ { 3 } + x ^ { 2 } + 2 x \]
 </p>
 <h2>Пример использования 2:</h2>
-<p>Пусть q == 4, в переменной <a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec</a> p хранится вектор коэффициентов </p><div class="fragment"><div class="line">(2;3;1)</div></div><!-- fragment --><p> а в переменной <a class="el" href="classFieldVec.html" title="Основной класс. ">FieldVec</a> r хранится вектор коэффициентов </p><div class="fragment"><div class="line">(3;2;1)</div></div><!-- fragment --><p> Тогда в результате выполнения команды </p><div class="fragment"><div class="line">(p * r).<a class="code" href="classFieldVec.html#a58bf4da4f4b15adea0fd3ef4cc754b2f">tex_print</a>(std::cout, <span class="stringliteral">&quot;v_{12}&quot;</span>);</div></div><!-- fragment --><p> на стандартный поток вывода поступит </p><div class="fragment"><div class="line">v_{12} ^ { 4 } + v_{12} ^ { 3 } + 3 v_{12} ^ { 2 } + v_{12} + 2</div></div><!-- fragment --><p>И сама формула выглядит так: </p><p class="formulaDsp">
+<p>Пусть q == 4, в переменной <a class="el" href="classFieldVec.html" title="Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов.   Пример использования приведен в ">FieldVec</a> p хранится вектор коэффициентов </p><div class="fragment"><div class="line">(2;3;1)</div></div><!-- fragment --><p> а в переменной <a class="el" href="classFieldVec.html" title="Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов.   Пример использования приведен в ">FieldVec</a> r хранится вектор коэффициентов </p><div class="fragment"><div class="line">(3;2;1)</div></div><!-- fragment --><p> Тогда в результате выполнения команды </p><div class="fragment"><div class="line">(p * r).<a class="code" href="classFieldVec.html#a58bf4da4f4b15adea0fd3ef4cc754b2f">tex_print</a>(std::cout, <span class="stringliteral">&quot;v_{12}&quot;</span>);</div></div><!-- fragment --><p> на стандартный поток вывода поступит </p><div class="fragment"><div class="line">v_{12} ^ { 4 } + v_{12} ^ { 3 } + 3 v_{12} ^ { 2 } + v_{12} + 2</div></div><!-- fragment --><p>И сама формула выглядит так: </p><p class="formulaDsp">
 \[v_{12} ^ { 4 } + v_{12} ^ { 3 } + 3 v_{12} ^ { 2 } + v_{12} + 2 \]
 </p>
  <dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a8">Example1.cpp</a> и <a class="el" href="Example1_1_8cpp-example.html#a8">Example1_1.cpp</a>.</dd>
 </dl>
+</div>
+</div>
+<h2 class="groupheader">Документация по друзьям класса и функциям, относящимся к классу</h2>
+<a class="anchor" id="af44fecec442c0482b141033a2ec3038a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classFieldVec.html">FieldVec</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Вывод многочлена в виде вектора (v[0], v[1], ... , v[n]), где v[i] - коэффициент при x^i </p>
+
 </div>
 </div>
 <h2 class="groupheader">Поля</h2>
@@ -560,12 +600,12 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 </div><div class="memdoc">
 <p>Статическая переменная. Возможна работа только с кольцом полиномов только над кольцом вычетов по одному модулю. <br />
 В начале программы явным образом должно быть прописано <br />
-</p><dl class="section warning"><dt>Предупреждения</dt><dd><a class="el" href="classFieldVec.html#a69217baa6b405ef48033ec4b923b1417">FieldVec::q</a> = &lt; Количество="" элементов="" кольца="" вычетов&gt;=""&gt;; (без &lt;&gt;) </dd>
+</p><dl class="section warning"><dt>Предупреждения</dt><dd><a class="el" href="classFieldVec.html#a69217baa6b405ef48033ec4b923b1417">FieldVec::q</a> = Количество элементов кольца вычетов; </dd>
 <dd>
 Программа может некорректно обрабатывать старые векторы при изменении q </dd>
 <dd>
 При q == 2 лучше использовать <a class="el" href="classBoolVec.html" title="Основной класс. ">BoolVec</a> </dd></dl>
-<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a4">Example1.cpp</a> и <a class="el" href="Example1_1_8cpp-example.html#a4">Example1_1.cpp</a>.</dd>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a4">Example1.cpp</a>, <a class="el" href="Example1_1_8cpp-example.html#a4">Example1_1.cpp</a> и <a class="el" href="Example2_8cpp-example.html#a3">Example2.cpp</a>.</dd>
 </dl>
 </div>
 </div>
