@@ -1,7 +1,6 @@
 /**
 *@mainpage Библиотека работы с кольцом многочленов над кольцом вычетов из q элементов.
 *@author Шурыгин Дмитрий Михайлович, 318 ВМК МГУ, 2017
-*@file Example1.cpp @file Example 1_1.cpp @file Example2.cpp
 */
 
 #ifndef FIELDVEC_H
@@ -35,7 +34,7 @@ class DivisionOnZero{};
 * @class FieldVec
 * @brief Основной класс.
 * Реализует работу с кольцом многочленов над кольцом вычетов из q элементов. \n Пример использования приведен в 
-* \example Example1.cpp Example1_1.cpp Example2.cpp
+* @example Example1.cpp @example Example1_1.cpp @example Example2.cpp
 */
 class FieldVec{
 

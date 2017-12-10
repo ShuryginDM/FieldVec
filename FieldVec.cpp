@@ -161,7 +161,7 @@ FieldVec &FieldVec::operator-=(const FieldVec &v){
 
 FieldVec FieldVec::operator%(const FieldVec &v){
     unsigned int max_coef = v.var[0];
-    unsigned int max_coef_i = 0;
+    int max_coef_i = 0;
     for(unsigned int i = v.size() - 1; i > 0; i--){
         if(v.var[i]){
             max_coef = v.var[i];
@@ -186,7 +186,7 @@ FieldVec FieldVec::operator%(const FieldVec &v){
     unsigned int t;
     for(int i = rem_.size() - 1; i >= max_coef_i; i--){
         if(rem_[i]){
-            for(unsigned int j = 0; j <= max_coef_i; j++){
+            for(int j = 0; j <= max_coef_i; j++){
                 t = (coefs[rem_[i]] * v.var[j]) % q;
                 if(rem_[i - max_coef_i + j] > t){
                     rem_[i - max_coef_i + j] -= t;
@@ -201,7 +201,7 @@ FieldVec FieldVec::operator%(const FieldVec &v){
 
 FieldVec FieldVec::operator/(FieldVec &v){
     unsigned int max_coef = v.var[0];
-    unsigned int max_coef_i = 0;
+    int max_coef_i = 0;
     for(int i = v.size() - 1; i > 0; i--){
         if(v.var[i]){
             max_coef = v.var[i];
@@ -232,7 +232,7 @@ FieldVec FieldVec::operator/(FieldVec &v){
     unsigned int t;
     for(int i = var.size() - 1; i >= max_coef_i; i--){
         if(rem_[i]){
-            for(unsigned int j = 0; j <= max_coef_i; j++){
+            for(int j = 0; j <= max_coef_i; j++){
                 t = (coefs[rem_[i]] * v.var[j]) % q;
                 if(rem_[i - max_coef_i + j] > t){
                     rem_[i - max_coef_i + j] -= t;
@@ -422,9 +422,9 @@ bool BoolVec::operator==(const BoolVec &v){
 }
 
 BoolVec BoolVec::operator%(const BoolVec &v){
-    unsigned int max_coef_i = 0;
-    bool max_coef = 0;
-    for(unsigned int i = v.size() - 1; i > 0; i--){
+    int max_coef_i = 0;
+    bool max_coef = v.var[0];
+    for(int i = v.size() - 1; i > 0; i--){
         if(v.var[i]){
             max_coef = v.var[i];
             max_coef_i = i; 
@@ -435,10 +435,9 @@ BoolVec BoolVec::operator%(const BoolVec &v){
         throw DivisionOnZero{};
     }
     BoolVec rem_ = *this;
-    unsigned int t;
     for(int i = rem_.size() - 1; i >= max_coef_i; i--){
         if(rem_[i]){
-            for(unsigned int j = 0; j <= max_coef_i; j++){
+            for(int j = 0; j <= max_coef_i; j++){
                 rem_.var[i - max_coef_i + j] = rem_[i - max_coef_i + j] ^ (rem_[i] & v.var[j]);
             }
         }
@@ -447,9 +446,9 @@ BoolVec BoolVec::operator%(const BoolVec &v){
 }
 
 BoolVec BoolVec::operator/(BoolVec &v){
-    unsigned int max_coef_i = 0;
+    int max_coef_i = 0;
     bool max_coef = v.var[0];
-    for(unsigned int i = v.size() - 1; i > 0; i--){
+    for(int i = v.size() - 1; i > 0; i--){
         if(v.var[i]){
             max_coef = v.var[i];
             max_coef_i = i; 
@@ -465,7 +464,7 @@ BoolVec BoolVec::operator/(BoolVec &v){
     unsigned int t;
     for(int i = rem_.size() - 1; i >= max_coef_i; i--){
         if(rem_[i]){
-            for(unsigned int j = 0; j <= max_coef_i; j++){
+            for(int j = 0; j <= max_coef_i; j++){
                 rem_.var[i - max_coef_i + j] =  rem_[i - max_coef_i + j] ^ (rem_[i] & v.var[j]);
                 div_.var[i - max_coef_i] = t;
             }
