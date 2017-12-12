@@ -479,12 +479,11 @@ BoolVec BoolVec::operator/(BoolVec &v){
     std::vector<bool> z(var.size() - max_coef_i, 0);
     BoolVec div_(z);
     BoolVec rem_ = *this;
-    unsigned int t;
     for(int i = rem_.size() - 1; i >= max_coef_i; i--){
         if(rem_[i]){
             for(int j = 0; j <= max_coef_i; j++){
+                div_.var[i - max_coef_i] = rem_[i] & v.var[j];
                 rem_.var[i - max_coef_i + j] =  rem_[i - max_coef_i + j] ^ (rem_[i] & v.var[j]);
-                div_.var[i - max_coef_i] = t;
             }
         }
     }

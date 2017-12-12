@@ -1,6 +1,6 @@
 /**
-*@mainpage Библиотека работы с кольцом многочленов над кольцом вычетов из q элементов.
-*@author Шурыгин Дмитрий Михайлович, 318 ВМК МГУ, 2017
+* @mainpage Библиотека работы с кольцом многочленов над кольцом вычетов из q элементов.
+* @author Шурыгин Дмитрий Михайлович, 318 ВМК МГУ, 2017
 */
 
 #ifndef FIELDVEC_H
@@ -34,7 +34,8 @@ class DivisionOnZero{};
 * @class FieldVec
 * @brief Основной класс.
 * Реализует работу с кольцом многочленов над кольцом вычетов из q элементов. \n Пример использования приведен в 
-* @example Example1.cpp @example Example1_1.cpp @example Example2.cpp
+* @example Example1.cpp @example Example1_1.cpp @example Example2.cpp @example Example3.cpp @example Example4.cpp
+* @example Example5.cpp @example Example6.cpp @example Example7.cpp
 */
 class FieldVec{
 
@@ -229,7 +230,7 @@ public:
     * И сама формула выглядит так:
     * \f[v_{12} ^ { 4 } + v_{12} ^ { 3 } + 3 v_{12} ^ { 2 } + v_{12} + 2 \f]
     */
-    void tex_print(std::ostream &os, const char *name = "x");
+    void tex_print(std::ostream &os = std::cout, const char *name = "x");
 
 
     /**
@@ -438,7 +439,7 @@ public:
     * И сама формула выглядит так:
     * \f[v_{12} ^ { 4 } + v_{12} \f]
     */
-    void tex_print(std::ostream &os, const char *name = "x");
+    void tex_print(std::ostream &os = std::cout, const char *name = "x");
 
     /**
     *  set Устанавливает коэфиициент при x ^ z равным b 

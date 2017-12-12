@@ -55,7 +55,7 @@ int main(){
         }
 
         for(int i = 0; i < v.size(); i++){
-            v[i].tex_print(std::cout);
+            v[i].tex_print();
             std::cout << std::endl;
         }
 
@@ -100,7 +100,7 @@ int main(){
     }
 
     for(int i = 0; i < v.size(); i++){
-        v[i].tex_print(std::cout);
+        v[i].tex_print();
         std::cout << std::endl;
     }
 

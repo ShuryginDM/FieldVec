@@ -1,4 +1,4 @@
-/**
+/*
 * Задание 3.1 отсюда: http://mk.cs.msu.ru/images/d/d4/Ivdm-sem3.pdf
 */
 /* 
@@ -28,13 +28,13 @@ void f1(){
     g.push_back(1);/*g == x + 1*/
 
     std::cout << "f(x) = ";
-    f.tex_print(std::cout);
+    f.tex_print();
     std::cout << std::endl << "g(x) = ";
-    g.tex_print(std::cout);
+    g.tex_print();
     std::cout << std::endl << "f(x) / g(x) = ";
-    (f/g).tex_print(std::cout);
+    (f/g).tex_print();
     std::cout << std::endl << "f(x) % g(x) = ";
-    (f % g).tex_print(std::cout);
+    (f % g).tex_print();
     std::cout << std::endl;
 }
 
@@ -53,13 +53,13 @@ void f2(){
     g.push_back(1);/*g == x^2 + x + 1*/
 
     std::cout << "f(x) = ";
-    f.tex_print(std::cout);
+    f.tex_print();
     std::cout << std::endl << "g(x) = ";
-    g.tex_print(std::cout);
+    g.tex_print();
     std::cout << std::endl << "f(x) / g(x) = ";
-    (f/g).tex_print(std::cout);
+    (f/g).tex_print();
     std::cout << std::endl << "f(x) % g(x) = ";
-    (f % g).tex_print(std::cout);
+    (f % g).tex_print();
     std::cout << std::endl;
 }
 
@@ -72,13 +72,13 @@ void f3(){
     BoolVec g(5);/*g == x^2 + 1*/
 
     std::cout << "f(x) = ";
-    f.tex_print(std::cout);
+    f.tex_print();
     std::cout << std::endl << "g(x) = ";
-    g.tex_print(std::cout);
+    g.tex_print();
     std::cout << std::endl << "f(x) / g(x) = ";
-    (f/g).tex_print(std::cout);
+    (f/g).tex_print();
     std::cout << std::endl << "f(x) % g(x) = ";
-    (f % g).tex_print(std::cout);
+    (f % g).tex_print();
     std::cout << std::endl;
 }
 
@@ -91,13 +91,13 @@ void f4(){
     BoolVec g(11);/*g == x^3 + x + 1*/
 
     std::cout << "f(x) = ";
-    f.tex_print(std::cout);
+    f.tex_print();
     std::cout << std::endl << "g(x) = ";
-    g.tex_print(std::cout);
+    g.tex_print();
     std::cout << std::endl << "f(x) / g(x) = ";
-    (f/g).tex_print(std::cout);
+    (f/g).tex_print();
     std::cout << std::endl << "f(x) % g(x) = ";
-    (f % g).tex_print(std::cout);
+    (f % g).tex_print();
     std::cout << std::endl;
 }
 
@@ -114,13 +114,13 @@ void f5(){
     g.push_back(1);/*g == x^2 + x + 1*/
 
     std::cout << "f(x) = ";
-    f.tex_print(std::cout);
+    f.tex_print();
     std::cout << std::endl << "g(x) = ";
-    g.tex_print(std::cout);
+    g.tex_print();
     std::cout << std::endl << "f(x) / g(x) = ";
-    (f/g).tex_print(std::cout);
+    (f/g).tex_print();
     std::cout << std::endl << "f(x) % g(x) = ";
-    (f % g).tex_print(std::cout);
+    (f % g).tex_print();
     std::cout << std::endl;
 }
 
@@ -138,13 +138,13 @@ void f6(){
     g.push_back(1);/*g == x^2 + 2*/
 
     std::cout << "f(x) = ";
-    f.tex_print(std::cout);
+    f.tex_print();
     std::cout << std::endl << "g(x) = ";
-    g.tex_print(std::cout);
+    g.tex_print();
     std::cout << std::endl << "f(x) / g(x) = ";
-    (f/g).tex_print(std::cout);
+    (f/g).tex_print();
     std::cout << std::endl << "f(x) % g(x) = ";
-    (f % g).tex_print(std::cout);
+    (f % g).tex_print();
     std::cout << std::endl;
 }
 
@@ -160,13 +160,13 @@ void f7(){
     g.push_back(3);/*g == 3x + 2*/
 
     std::cout << "f(x) = ";
-    f.tex_print(std::cout);
+    f.tex_print();
     std::cout << std::endl << "g(x) = ";
-    g.tex_print(std::cout);
+    g.tex_print();
     std::cout << std::endl << "f(x) / g(x) = ";
-    (f/g).tex_print(std::cout);
+    (f/g).tex_print();
     std::cout << std::endl << "f(x) % g(x) = ";
-    (f % g).tex_print(std::cout);
+    (f % g).tex_print();
     std::cout << std::endl;
 }
 
@@ -184,13 +184,13 @@ void f8(){
     g.push_back(2);/*g == 2x^2 + 3*/
 
     std::cout << "f(x) = ";
-    f.tex_print(std::cout);
+    f.tex_print();
     std::cout << std::endl << "g(x) = ";
-    g.tex_print(std::cout);
+    g.tex_print();
     std::cout << std::endl << "f(x) / g(x) = ";
-    (f/g).tex_print(std::cout);
+    (f/g).tex_print();
     std::cout << std::endl << "f(x) % g(x) = ";
-    (f % g).tex_print(std::cout);
+    (f % g).tex_print();
     std::cout << std::endl;
 }
 

@@ -118,6 +118,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <tr class="separator:a621051f8077d61277d08d636b3a74cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5593fa70677296d575a8f48e2370de6a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoolVec.html#a5593fa70677296d575a8f48e2370de6a">size</a> () const </td></tr>
 <tr class="separator:a5593fa70677296d575a8f48e2370de6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a540c08eb9964ce9d32d229c188524635"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a540c08eb9964ce9d32d229c188524635"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>actual_size</b> () const </td></tr>
+<tr class="separator:a540c08eb9964ce9d32d229c188524635"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0feb51ab84852495bf57d9ebf8d940ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoolVec.html#a0feb51ab84852495bf57d9ebf8d940ae">operator[]</a> (const unsigned int &amp;t)</td></tr>
 <tr class="separator:a0feb51ab84852495bf57d9ebf8d940ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05792ef3ca92ed10c1a6a76ee55a09f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBoolVec.html">BoolVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoolVec.html#a05792ef3ca92ed10c1a6a76ee55a09f6">operator+</a> (const <a class="el" href="classBoolVec.html">BoolVec</a> &amp;v)</td></tr>
@@ -150,9 +153,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <tr class="separator:a2fcc4367d9a758fc16047643400908fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac33fbb687be3ae9dae5f343872c0a557"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBoolVec.html">BoolVec</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoolVec.html#ac33fbb687be3ae9dae5f343872c0a557">operator++</a> (int l)</td></tr>
 <tr class="separator:ac33fbb687be3ae9dae5f343872c0a557"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1f7b1ccede38dbc2ddc9cf7f3f4b6c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoolVec.html#ae1f7b1ccede38dbc2ddc9cf7f3f4b6c9">tex_print</a> (std::ostream &amp;os, const char *name=&quot;x&quot;)</td></tr>
-<tr class="memdesc:ae1f7b1ccede38dbc2ddc9cf7f3f4b6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вывод полинома наподобие формулы LaTeX.  <a href="#ae1f7b1ccede38dbc2ddc9cf7f3f4b6c9">Подробнее...</a><br /></td></tr>
-<tr class="separator:ae1f7b1ccede38dbc2ddc9cf7f3f4b6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacf15568f77d9c83f832847cee2d0b73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoolVec.html#aacf15568f77d9c83f832847cee2d0b73">tex_print</a> (std::ostream &amp;os=std::cout, const char *name=&quot;x&quot;)</td></tr>
+<tr class="memdesc:aacf15568f77d9c83f832847cee2d0b73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вывод полинома наподобие формулы LaTeX.  <a href="#aacf15568f77d9c83f832847cee2d0b73">Подробнее...</a><br /></td></tr>
+<tr class="separator:aacf15568f77d9c83f832847cee2d0b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a574a927063062407bcac80eebd1cc716"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoolVec.html#a574a927063062407bcac80eebd1cc716">set</a> (const unsigned int &amp;z, const bool &amp;b)</td></tr>
 <tr class="separator:a574a927063062407bcac80eebd1cc716"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -164,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Основной класс. </p>
 <p>Реализует работу с кольцом многочленов над полем вычетов из 2 элементов Лучше оптимизирован, чем <a class="el" href="classFieldVec.html" title="Основной класс. Реализует работу с кольцом многочленов над кольцом вычетов из q элементов.   Пример использования приведен в ">FieldVec</a> с q == 2 Пример использования приведен в </p>
-<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#_a0">Example1.cpp</a>, <a class="el" href="Example1_1_8cpp-example.html#_a0">Example1_1.cpp</a> и <a class="el" href="Example2_8cpp-example.html#_a0">Example2.cpp</a>.</dd>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#_a0">Example1.cpp</a>, <a class="el" href="Example1_1_8cpp-example.html#_a0">Example1_1.cpp</a>, <a class="el" href="Example2_8cpp-example.html#_a0">Example2.cpp</a>, <a class="el" href="Example3_8cpp-example.html#_a0">Example3.cpp</a>, <a class="el" href="Example4_8cpp-example.html#_a0">Example4.cpp</a>, <a class="el" href="Example5_8cpp-example.html#_a0">Example5.cpp</a>, <a class="el" href="Example6_8cpp-example.html#_a0">Example6.cpp</a> и <a class="el" href="Example7_8cpp-example.html#_a0">Example7.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Конструктор(ы)</h2>
 <a class="anchor" id="ae1aea0821f8002bfdf3daa113bd49453"></a>
 <div class="memitem">
@@ -429,7 +432,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
   </table>
   </dd>
 </dl>
-<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a1">Example1.cpp</a>, <a class="el" href="Example1_1_8cpp-example.html#a1">Example1_1.cpp</a> и <a class="el" href="Example2_8cpp-example.html#a1">Example2.cpp</a>.</dd>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a1">Example1.cpp</a>, <a class="el" href="Example1_1_8cpp-example.html#a1">Example1_1.cpp</a>, <a class="el" href="Example2_8cpp-example.html#a1">Example2.cpp</a>, <a class="el" href="Example3_8cpp-example.html#a2">Example3.cpp</a>, <a class="el" href="Example4_8cpp-example.html#a2">Example4.cpp</a>, <a class="el" href="Example5_8cpp-example.html#a1">Example5.cpp</a>, <a class="el" href="Example6_8cpp-example.html#a2">Example6.cpp</a> и <a class="el" href="Example7_8cpp-example.html#a2">Example7.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -473,11 +476,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
       </table>
 </div><div class="memdoc">
 <p>size Показывает, сколько элементов находится в векторе коэффициентов </p><dl class="section return"><dt>Возвращает</dt><dd>Максимальная степень x в этом многочлене (перед которой коэффициент, возможно, равен 0) </dd></dl>
-<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a2">Example1.cpp</a> и <a class="el" href="Example1_1_8cpp-example.html#a2">Example1_1.cpp</a>.</dd>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a2">Example1.cpp</a>, <a class="el" href="Example1_1_8cpp-example.html#a2">Example1_1.cpp</a>, <a class="el" href="Example4_8cpp-example.html#a3">Example4.cpp</a>, <a class="el" href="Example5_8cpp-example.html#a2">Example5.cpp</a>, <a class="el" href="Example6_8cpp-example.html#a3">Example6.cpp</a> и <a class="el" href="Example7_8cpp-example.html#a3">Example7.cpp</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ae1f7b1ccede38dbc2ddc9cf7f3f4b6c9"></a>
+<a class="anchor" id="aacf15568f77d9c83f832847cee2d0b73"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -485,7 +488,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
           <td class="memname">void BoolVec::tex_print </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
+          <td class="paramname"><em>os</em> = <code>std::cout</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -514,10 +517,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 \[x ^ { 2 } + x \]
 </p>
 <h2>Пример использования 2:</h2>
-<p>Пусть <a class="el" href="classBoolVec.html" title="Основной класс. ">BoolVec</a> p хранится вектор коэффициентов </p><div class="fragment"><div class="line">(0;1;1)</div></div><!-- fragment --><p> а в переменной <a class="el" href="classBoolVec.html" title="Основной класс. ">BoolVec</a> r хранится вектор коэффициентов </p><div class="fragment"><div class="line">(1;1;1)</div></div><!-- fragment --><p> Тогда в результате выполнения команды </p><div class="fragment"><div class="line">(p * r).<a class="code" href="classBoolVec.html#ae1f7b1ccede38dbc2ddc9cf7f3f4b6c9">tex_print</a>(std::cout, <span class="stringliteral">&quot;v_{12}&quot;</span>);</div></div><!-- fragment --><p> на стандартный поток вывода поступит </p><div class="fragment"><div class="line">v_{12} ^ { 4 } + v_{12}</div></div><!-- fragment --><p>И сама формула выглядит так: </p><p class="formulaDsp">
+<p>Пусть <a class="el" href="classBoolVec.html" title="Основной класс. ">BoolVec</a> p хранится вектор коэффициентов </p><div class="fragment"><div class="line">(0;1;1)</div></div><!-- fragment --><p> а в переменной <a class="el" href="classBoolVec.html" title="Основной класс. ">BoolVec</a> r хранится вектор коэффициентов </p><div class="fragment"><div class="line">(1;1;1)</div></div><!-- fragment --><p> Тогда в результате выполнения команды </p><div class="fragment"><div class="line">(p * r).<a class="code" href="classBoolVec.html#aacf15568f77d9c83f832847cee2d0b73">tex_print</a>(std::cout, <span class="stringliteral">&quot;v_{12}&quot;</span>);</div></div><!-- fragment --><p> на стандартный поток вывода поступит </p><div class="fragment"><div class="line">v_{12} ^ { 4 } + v_{12}</div></div><!-- fragment --><p>И сама формула выглядит так: </p><p class="formulaDsp">
 \[v_{12} ^ { 4 } + v_{12} \]
 </p>
- <dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a3">Example1.cpp</a>, <a class="el" href="Example1_1_8cpp-example.html#a3">Example1_1.cpp</a> и <a class="el" href="Example2_8cpp-example.html#a2">Example2.cpp</a>.</dd>
+ <dl><dt><b>Примеры: </b></dt><dd><a class="el" href="Example1_8cpp-example.html#a3">Example1.cpp</a>, <a class="el" href="Example1_1_8cpp-example.html#a3">Example1_1.cpp</a>, <a class="el" href="Example2_8cpp-example.html#a2">Example2.cpp</a>, <a class="el" href="Example3_8cpp-example.html#a3">Example3.cpp</a>, <a class="el" href="Example4_8cpp-example.html#a8">Example4.cpp</a>, <a class="el" href="Example5_8cpp-example.html#a3">Example5.cpp</a>, <a class="el" href="Example6_8cpp-example.html#a8">Example6.cpp</a> и <a class="el" href="Example7_8cpp-example.html#a8">Example7.cpp</a>.</dd>
 </dl>
 </div>
 </div>
